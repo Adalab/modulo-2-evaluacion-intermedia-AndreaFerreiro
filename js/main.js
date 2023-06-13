@@ -1,17 +1,17 @@
 'use strict'
 const select= document.querySelector('.js_select');
-const bet = document.querySelector ('.js_bet');
+const inputBet = document.querySelector ('.js_bet');
 const buttom = document.querySelector ('.js_buttom');
 const reset =document.querySelector ('.js_reset');
 const result = document.querySelector ('.js_result');
-const balance = document.querySelector ('.js_balance');
+const inputBalance = document.querySelector ('.js_balance');
 let saldo = 100;
 function win() {
-    const betValue= bet.value;
+    const betValue= inputBet.value;
     saldo = saldo+betValue*2;
 }
 function fail() {
-    const betValue= bet.value;
+    const betValue= inputBet.value;
     saldo = saldo-betValue;
 }
 function getRandomNumber(max) {
@@ -26,13 +26,13 @@ function Bet(){
     if (selectValue === randomNumber){
         innerResult('Has ganado el doble de lo apostado!');
         win();
-        balance.innerHTML= saldo;
+        inputBalance.innerHTML= saldo;
         buttom.classList.add('hidden');
         reset.classList.remove('hidden');
     }else{
         innerResult('Has perdido lo apostado!');
         fail();
-        balance.innerHTML= saldo;
+        inputBalance.innerHTML= saldo;
         buttom.classList.add('hidden');
         reset.classList.remove('hidden');
     }
